@@ -1,17 +1,52 @@
-# Завдання 4
-#  Створіть клас Car з атрибутами brand (марка
-# автомобіля), model (модель) та year (рік випуску).
-# Додайте метод start_engine, який виведе повідомлення
-# про те, що двигун запущено.
+# Створіть клас «Дріб». Збережіть у класі
+# чисельник та знаменник. Реалізуйте методи класу для
+# введення-виведення даних. Також створіть методи
+# класу для виконання арифметичних операцій
+# (додавання, віднімання, множення, ділення і т. д.)
 
-class Car:
-    def __init__(self, brand, model, year):
-        self.brand = brand
-        self.model = model
-        self.year = year
+class Fraction:
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
 
-    def engine_run(self):
-        print("Двигун запущений")
+    def display_fraction(self):
+        print(f"{self.numerator}/{self.denominator}")
 
-car1 = Car("Tesla", "Model X", 2022 )
-car1.engine_run()
+    def add(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.denominator + other_fraction.numerator * self.denominator
+        result_denominator = self.denominator * other_fraction.denominator
+        return Fraction(result_numerator, result_denominator)
+
+    def subtract(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.denominator - other_fraction.numerator * self.denominator
+        result_denominator = self.denominator * other_fraction.denominator
+        return Fraction(result_numerator, result_denominator)
+
+    def multiply(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.numerator
+        result_denominator = self.denominator * other_fraction.denominator
+        return Fraction(result_numerator, result_denominator)
+
+    def divide(self, other_fraction):
+        result_numerator = self.numerator * other_fraction.denominator
+        result_denominator = self.denominator * other_fraction.numerator
+        return Fraction(result_numerator, result_denominator)
+
+fraction1 = Fraction(1, 2)
+fraction2 = Fraction(2, 4)
+
+fraction1.display_fraction()
+fraction2.display_fraction()
+
+result_addition = fraction1.add(fraction2)
+result_addition.display_fraction()
+
+result_addition = fraction1.subtract(fraction2)
+result_addition.display_fraction()
+
+result_addition = fraction1.multiply(fraction2)
+result_addition.display_fraction()
+
+result_addition = fraction1.divide(fraction2)
+result_addition.display_fraction()
+
