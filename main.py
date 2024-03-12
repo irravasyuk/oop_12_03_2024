@@ -1,29 +1,17 @@
-# Завдання 1
-# Створіть клас Student з атрибутами name та age.
-# Додайте метод print_info, який виведе інформацію про
-# студента у на вигляді "Ім'я: {name}, Вік: {age}".
+# Завдання 3
+# Створіть клас Book з атрибутами title (назва
+# книги), author (автор) та genre (жанр). Додайте метод
+# display_info, який виведе інформацію про книгу у
+# вигляді "Назва: {title}, Автор: {author}, Жанр: {genre}".
 
+class Book:
+    def __init__(self, title, author, genre):
+        self.title = title
+        self.author = author
+        self.genre = genre
 
-class Student:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+    def information(self):
+        print(f"Назва: {self.title},\nАвтор: {self.author},\nЖанр: {self.genre}")
 
-    def print_info(self):
-        print(f"Ім'я студента - {self.name} та його вік {self.age}")
-
-student1 = Student("Іван", 20)
-student1.print_info()
-
-# class Dogs():
-#     def __init__(self, name, age, breed):
-#         self.name = name
-#         self.age = age
-#         self.breed = breed
-#
-#
-# my_dog = Dogs("Бобік", 5, "Лабродор")
-#
-# print(my_dog.name)
-# print(my_dog.age)
-
+book1 = Book("12 правил життя", "Джордана Пітерсон", "допоможи собі сам")
+book1.information()
